@@ -1,0 +1,93 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+:root {
+  font-size: 62.5%;
+
+  --color-text: hsl(240, 6%, 21%);
+  --bg-button-sound: hsl(240, 9%, 89%);
+  --bg-sound-controls: hsl(194, 97%, 31%);
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--color-text);
+
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+}
+main {
+  min-width: 821px;
+
+  padding-inline: 3rem;
+  margin: auto auto;
+
+
+  display: flex;
+  align-items: center;
+  gap: clamp(4rem, 6rem + 13vw, 19.2rem);
+}
+.timer {
+  display: flex;
+
+  font-weight: 500;
+  font-size: 12.6rem;
+  line-height: 14.8rem;
+
+  margin-bottom: 1.7rem;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+.controls button {
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+
+}
+.sounds-controls {
+  display: grid;
+  grid-template-areas: '1fr 1fr';
+  gap: 3.2rem;
+}
+
+.hide {
+  display: none;
+}
+
+
+ .sound-forest,
+ .sound-rain,
+ .sound-cafeteria,
+ .sound-fireplace {
+  width: 13.8rem;
+  height: 15.2rem;
+
+  border: none;
+  border-radius: 2.4rem;
+
+  background-color: var(--bg-button-sound);
+
+  cursor: pointer;
+
+  transition: all 500ms;
+}
+.sound-forest.active,
+.sound-rain.active,
+.sound-cafeteria.active,
+.sound-fireplace.active {
+  background-color: var(--bg-sound-controls);
+  transform: scale(1.1);
+}
+.sound-forest.active svg path,
+.sound-rain.active svg path,
+.sound-cafeteria.active svg path,
+.sound-fireplace.active svg path {
+  fill: white;
+}
+
